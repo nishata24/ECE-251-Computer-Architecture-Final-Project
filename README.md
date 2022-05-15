@@ -11,3 +11,10 @@ The Instruction Set Architecture is the model that defines how the CPU is contro
 <img width="769" alt="MicrosoftTeams-image (15)" src="https://user-images.githubusercontent.com/70669028/168487002-f2424b3b-59d1-4551-a055-fd630794c3c2.png">
 
 
+
+
+
+
+
+
+
