@@ -12,11 +12,33 @@ The Arithmetic Logic Unit in this 8-bit computer functions like a digital circui
 **Controlpath Logic**
 <img width="921" alt="Screen Shot 2022-05-15 at 10 02 40 PM" src="https://user-images.githubusercontent.com/94148211/168508243-bd152c23-7edc-4231-baa3-4409b4ff812c.png">
 
+** Memory
+Our computer used a harvard architecture memory which consists of both data and instruction memory. The instruction memory 
+
+
 **ISA**
 
 The Instruction Set Architecture is the model that defines how the CPU is controlled by the software. In this computer, each instruction is 8 bits in length with an 8-bit CPU. The computer can run four different instructions which are the I, R, J, and JR types. The R type instruction set is used for 3 registers ALU shifts and operations. The I type is used for 2 registers and 1 constant ALU operation. The J type is utilized when a jump has to be performed. Lastly, the JR type refers to the jump register which returns control to the caller. The opcodes represent the field that denotes the operation and format of the instructions. Rn, Rd, Shamt, and Rm represent the first register source, register destination, shift amount, and second register respectively.   
 
 <img width="769" alt="MicrosoftTeams-image (15)" src="https://user-images.githubusercontent.com/70669028/168487002-f2424b3b-59d1-4551-a055-fd630794c3c2.png">
+
+R type
+<img width="854" alt="Screen Shot 2022-05-15 at 11 14 26 PM" src="https://user-images.githubusercontent.com/70669028/168513878-285e0b90-1f69-4ede-9f23-4b8b8dc903a3.png">
+
+I Immediate
+<img width="885" alt="Screen Shot 2022-05-15 at 11 20 17 PM" src="https://user-images.githubusercontent.com/70669028/168514410-5adc3390-c9a4-43a9-9628-97404d0f39ff.png">
+
+I register to memory
+<img width="886" alt="Screen Shot 2022-05-15 at 11 24 51 PM" src="https://user-images.githubusercontent.com/70669028/168514738-91f089a1-c80c-4c87-accf-82c300279c78.png">
+
+I memory to register
+
+<img width="892" alt="Screen Shot 2022-05-15 at 11 28 41 PM" src="https://user-images.githubusercontent.com/70669028/168514970-c91f53b8-27cc-43e4-98eb-7d3814143191.png">
+
+J type
+<img width="911" alt="Screen Shot 2022-05-15 at 11 32 14 PM" src="https://user-images.githubusercontent.com/70669028/168515274-79d5eab7-ffa7-46d8-9300-a6269db67b73.png">
+
+
 
 **Instruction Set (MIPS subset)**
 
