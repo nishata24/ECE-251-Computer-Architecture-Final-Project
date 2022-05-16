@@ -9,6 +9,10 @@ If Makefile does not work, compile manually and obtain waves using the following
 
 The Arithmetic Logic Unit in this 8-bit computer functions like a digital circuit that performs logical operations based on instructions. Once the ALU is given information from the registers via the controller the ALU decoder recognizes the various operations from their designated opcodes. 
 
+**Controlpath Logic**
+<img width="1440" alt="Screen Shot 2021-10-22 at 10 56 35 PM" src="https://user-images.githubusercontent.com/94148211/168508141-9a743fb1-1336-4ad0-ab39-57b9e7b8ed0d.png">
+
+
 **ISA**
 
 The Instruction Set Architecture is the model that defines how the CPU is controlled by the software. In this computer, each instruction is 8 bits in length with an 8-bit CPU. The computer can run four different instructions which are the I, R, J, and JR types. The R type instruction set is used for 3 registers ALU shifts and operations. The I type is used for 2 registers and 1 constant ALU operation. The J type is utilized when a jump has to be performed. Lastly, the JR type refers to the jump register which returns control to the caller. The opcodes represent the field that denotes the operation and format of the instructions. Rn, Rd, Shamt, and Rm represent the first register source, register destination, shift amount, and second register respectively.   
