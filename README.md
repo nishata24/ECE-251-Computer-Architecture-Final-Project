@@ -10,7 +10,9 @@ The Instruction Set Architecture is the model that defines how the CPU is contro
 
 <img width="769" alt="MicrosoftTeams-image (15)" src="https://user-images.githubusercontent.com/70669028/168487002-f2424b3b-59d1-4551-a055-fd630794c3c2.png">
 
+**DATAPATH AND CONTROL UNIT**
 <img width="666" alt="Instruction" src="https://user-images.githubusercontent.com/94148211/168506584-671aab17-7dbd-49ff-aff9-9d1deea83eab.png">
+
 In general, there are four steps to execute the instruction. The instruction is retrieved, and the PC is incremented. Two registers are read from the register file, and the main control unit sets the control lines. The ALU operates on the data from the register file. Then, the ALU result is stores in the destination register of the register file. 
 
 **GTKWAVE**
