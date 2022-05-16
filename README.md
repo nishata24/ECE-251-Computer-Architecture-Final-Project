@@ -12,9 +12,9 @@ The Arithmetic Logic Unit in this 8-bit computer functions like a digital circui
 **Controlpath Logic**
 <img width="921" alt="Screen Shot 2022-05-15 at 10 02 40 PM" src="https://user-images.githubusercontent.com/94148211/168508243-bd152c23-7edc-4231-baa3-4409b4ff812c.png">
 
-** Memory
-Our computer used a harvard architecture memory which consists of both data and instruction memory. The instruction memory 
+** Memory **
 
+Our computer used a harvard architecture memory which consists of both data and instruction memory. The instruction memory is the memory that the instructions are called from. The data memory is where the data is written in and read from. Furthermore, the memory is byte addressable which means that a character can be read or written from the memory bytes. 
 
 **ISA**
 
