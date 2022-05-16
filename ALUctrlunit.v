@@ -2,14 +2,14 @@
 
 module ALUctrlunit(ALUctrlbits, ALUop, funct);
 
-//-------------Input-------------------
+//Input
 input wire [2:0] ALUop;
 input wire funct;
-//-------------Output------------------
+//Output
 output reg [2:0] ALUctrlbits;
 
 
-//------------------Instructions-----------------------
+//Instructions
 initial begin
 	ALUctrlbits = 3'b000;
 end
