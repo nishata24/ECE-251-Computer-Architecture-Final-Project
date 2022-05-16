@@ -10,8 +10,7 @@ If Makefile does not work, compile manually and obtain waves using the following
 The Arithmetic Logic Unit in this 8-bit computer functions like a digital circuit that performs logical operations based on instructions. Once the ALU is given information from the registers via the controller the ALU decoder recognizes the various operations from their designated opcodes. 
 
 **Controlpath Logic**
-<img width="1440" alt="Screen Shot 2021-10-22 at 10 56 35 PM" src="https://user-images.githubusercontent.com/94148211/168508141-9a743fb1-1336-4ad0-ab39-57b9e7b8ed0d.png">
-
+<img width="921" alt="Screen Shot 2022-05-15 at 10 02 40 PM" src="https://user-images.githubusercontent.com/94148211/168508243-bd152c23-7edc-4231-baa3-4409b4ff812c.png">
 
 **ISA**
 
