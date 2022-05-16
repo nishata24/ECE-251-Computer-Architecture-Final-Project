@@ -11,7 +11,7 @@ input wire [7:0] input1;	//input at 1
 
 output reg [7:0] output1; 	//8 bits of output
 
-//------------------Instructions-----------------------
+//instructions
 //ctrl = ALUsrc (1 iff I type instruction)
 
 always @(input0||input1)
