@@ -1,9 +1,9 @@
 `timescale 1ns / 1ns
 
 module instruction_reg (j_immediate, jump_opcode_check, instruction_to_control_unit, rt, rs, i_immediate, funct, instruction_input);
-//-------------Input-------------------
+//Input
 input wire [7:0] instruction_input;
-//-------------Output------------------
+//Output
 output reg [4:0] j_immediate;
 output reg [1:0] jump_opcode_check;
 output reg [2:0] instruction_to_control_unit;
@@ -12,7 +12,7 @@ output reg [1:0] rs;
 output reg [1:0] i_immediate;
 output reg funct;
 
-//------------------Instructions-----------------------
+//Instructions
 initial 
 	begin
 		j_immediate <= 8'b0;
