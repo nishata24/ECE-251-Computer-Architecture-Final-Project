@@ -2,12 +2,12 @@
 
 module add1(in, out);
 
-//-------------Input Ports-----------------------------
-input wire [7:0] in;			//8 bits of data1
-//-------------Output Ports----------------------------
-output reg [7:0] out; 	//8 bits of result
+//Input Ports
+input wire [7:0] in;			
+//Output Ports
+output reg [7:0] out; 
 
-//------------------Instructions-----------------------
+//Instructions
 
 always @(in)
 begin
