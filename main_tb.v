@@ -14,7 +14,7 @@
 `include "ALU.v"
 `include "mux2_1_ctrl1_out1.v"
 `include "mux3_1.v"
-`include "addimm.v"
+`include "addimmediate.v"
 
 module main_tb ();
 //WIRES
