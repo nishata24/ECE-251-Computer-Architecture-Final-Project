@@ -23,6 +23,7 @@ The Instruction Set Architecture is the model that defines how the CPU is contro
 <img width="513" alt="Screen Shot 2022-05-15 at 10 29 04 PM" src="https://user-images.githubusercontent.com/94148211/168510141-a23b1597-ccf4-4971-9637-2d1c46bcab09.png">
 
 **Registers**
+
 <img width="482" alt="Screen Shot 2022-05-15 at 10 29 52 PM" src="https://user-images.githubusercontent.com/94148211/168510279-daf7cea9-265a-4988-bc07-0ec95f75a071.png">
 
 **DATAPATH AND CONTROL UNIT**
