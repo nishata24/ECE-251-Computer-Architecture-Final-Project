@@ -2,14 +2,13 @@
 
 module addimm(out, in, immediate);
 
-//-------------Input Ports-----------------------------
-input wire [7:0] in;			//8 bits of data1
+//Input Ports
+input wire [7:0] in;		
 input wire [7:0] immediate;
-//-------------Output Ports----------------------------
-output reg [7:0] out; 	//8 bits of result
+//Output Ports
+output reg [7:0] out; 
 
-//------------------Instructions-----------------------
-
+//Instructions
 // 001: add
 // 010: nand
 // 011: comparison
