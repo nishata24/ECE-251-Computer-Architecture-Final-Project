@@ -2,7 +2,7 @@
 
 ALU
 
-The ALU in our computer functions as a digital circuit that performs logical operations based on instructions. Once the ALU is given information from the registers via the controller the ALU decoder recognizes the various operations from the opcodes. 
+The Arithmetic Logic Unit in this 8-bit computer functions like a digital circuit that performs logical operations based on instructions. Once the ALU is given information from the registers via the controller the ALU decoder recognizes the various operations from their designated opcodes. 
 
 ISA
 
