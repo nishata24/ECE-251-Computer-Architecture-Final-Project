@@ -2,11 +2,11 @@
 
 module ctrl(jctrl, jrctrl, memWrite, memRead, memToReg, ALUop, ALUsrc, nextctrl, regWrite, beqctrl, ractrl, jalctrl, sltctrl, memctrl, inst1, inst2);
 
-//-------------Input Ports-----------------------------
+//Input Ports
 input wire [2:0] inst1;	//opcode
-input wire inst2;		//funct
+input wire inst2;	//funct
 
-//-------------Output Ports----------------------------
+//Output Ports
 
 output reg jctrl;
 output reg jrctrl;
@@ -19,12 +19,12 @@ output reg regWrite;
 output reg beqctrl;
 output reg ractrl;
 output reg jalctrl;
-output reg [1:0] sltctrl;	//see whether the control is slt_0 or slt_1
+	output reg [1:0] sltctrl;	//check if control is slt_0 or slt_1
 output reg [1:0] nextctrl;
 output reg memctrl;
 reg [3:0] instructions;
 
-//------------------Instructions-----------------------
+//Instructions
 initial
 	begin
 		//$display("Hello!");
