@@ -87,7 +87,7 @@ reg zero;		//register that stores the memory 0 for comparisons
 reg reset;		//reset pc counter
 
 
-//------------------Instructions-----------------------
+//Instructions
 
 always begin
 	#1 clk = ~clk;
@@ -113,107 +113,91 @@ pc program_counter(pcAddrOut, clk, pcFinalOut, reset, instruction);
 //INPUT: clk, pcFinalOut, reset, instruction (current pc)
 //OUTPUT: pcAddrOut 
 
-//---------------------------------------------------------------------------
 memory main_memory(instruction, readData, pcAddrOut, memWrite, memRead, ALUresult, rtData); 
 //INPUT: pcAddrOut, memWrite, memRead, ALUresult, rtData
 //OUTPUT: instruction, readData
 
-//---------------------------------------------------------------------------
 instruction_reg instruction_register(jImm5, jumpCheck2, inst2CtrlUnit, rtAddr, rsAddr, iImm2, funct, instruction);	//instruction register for decoding
 //INPUT: instruction
 //OUTPUT: jImm5, jumpCheck2, inst2CtrlUnit, rtAddr, rsAddr, iImm2, funct
 
-//---------------------------------------------------------------------------
 signext_2to8 extension_2to8_1(jumpCheck8, jumpCheck2);	//sign extension for jump opcode check
 //INPUT: jumpCheck2
 //OUTPUT: jumpCheck8
 
-//---------------------------------------------------------------------------
 signext_5to8 extension_5to8(jImm8, jImm5);			//sign extension for jump immediate
 //INPUT: jImm5
 //OUTPUT: jImm8
 
-//---------------------------------------------------------------------------
 signext_2to8 extension_2to8_2(iImm8, iImm2);			//sign extension for I instruction
 //INPUT: iImm2
 //OUTPUT: iImm8
 
-//---------------------------------------------------------------------------
 ALU compareJump(jumpCtrlToMux, jumpCheck8);	//Check for jump code
 //INPUT: jumpCheck8
 //OUTPUT: jumpCtrlToMux
 
-//---------------------------------------------------------------------------
 mux2_1_ctrl1 ctrlJumpMux(muxJumpFlag, zero, funct, jumpCtrlToMux);		//choose between Jumps
 //INPUT: zero, funct
 //OUTPUT: muxJumpFlag
 //CONTROL: jumpCtrlToMux
 
-//---------------------------------------------------------------------------
 mux2_1_ctrl1_out1 ctrlJR(rsWriteAddr, rsAddr, returnAddr, ractrl);		//choose between ra and rsAddr
 //INPUT: rtAddr, returnAddr
 //OUTPUT: rsWriteAddr
 //CONTROL: ractrl
 
-//---------------------------------------------------------------------------
 ctrl control_unit(jctrl, jrctrl, memWrite, memRead, memToReg, ALUOp, ALUsrc, nextctrl, regWrite, beqctrl, ractrl, jalctrl, sltCtrl, memctrl, inst2CtrlUnit, muxJumpFlag);
 //INPUT: inst2CtrlUnit, muxJumpFlag(== funct if R or I type)
 //OUTPUT: jctrl, jrctrl, memWrite, memRead, memToReg, ALUOp, ALUsrc, nextctrl, regWrite, beqctrl, ractrl, jalctrl, sltCtrl
 
-//---------------------------------------------------------------------------
 //Register File		
 register_file register_file(rtData, rsData, s1_data, s2_data, sp_data, ra_data, regWrite, beqctrl, jrctrl, memctrl, ALUsrc,  rtAddr, rsAddr, dataToWrite, sltCtrl, rsWriteAddr, clk);
 //INPUT: regWrite, beqctrl, jrctrl, ALUsrc, rtAddr, rsWriteAddr, dataToWrite, sltCtrl, rsAddr
 //OUTPUT: rtData, rsData, s1_data, s2_data, sp_data, ra_data
 
-//---------------------------------------------------------------------------
 mux2_1_ctrl1_in2 ctrl_immmediate(muxALUsrc, rtData, iImm8, ALUsrc);			//choose between rt and immediate
 //INPUT: rtData, iImm8
 //OUTPUT: muxALUsrc
 //CONTROL: ALUsrc
 
-//---------------------------------------------------------------------------
 ALUctrlunit alu_ctrl_unit(ALUctrlbits, ALUOp, funct);		
 //INPUT: ALUOp, funct
 //OUTPUT: ALUctrlbits
 
-//---------------------------------------------------------------------------
 ALUctrl alu_with_ctrl(jumpFlag_ALUctrl, ALUresult, sltReg, ALUctrlbits, muxALUsrc, rsData, clk);		
 //INPUT: ALUctrlbits, muxALUsrc, rsData
 //OUTPUT: jumpFlag_ALUctrl, ALUresult, sltReg		here: ALUresult is computed value if R type, effective address in memory if I type
 
-//---------------------------------------------------------------------------
 add1 addition_1(pcAddrOut, pcAddrOutPlusOne);			
 //INPUT: pcAddrOut
 //OUTPUT pcAddrOutPlusOne					for R or I type, PC(final) = PC(current) + 1
 
-//---------------------------------------------------------------------------
 addimm addition_imm(pcAddrOutPlusImm, pcAddrOut, jImm8);
 //INPUT: pcAddrIn
 //OUTPUT: pcAddrOutPlusImm					for J type, PC(final) = PC(current) + immediate
 //IMMEDIATE: jImm8
 
-//---------------------------------------------------------------------------pcPlusTwo == originally pcAddrIn
+//pcPlusTwo == originally pcAddrIn
 mux3_1 ctrl_write_back(dataToWrite, ALUresult, readData, pcAddrOutPlusOne, memToReg);		//choose between memory, ALU and PC to writeback to regFile
 //INPUT: ALUresult, readData, pcAddrOutPlusOne (for jal next pc)
 //OUTPUT: dataToWrite
 //CONTROL: memToReg
-//---------------------------------------------------------------------------
+//
 and and_1(beqSatisfied, jumpFlag_ALUctrl, beqctrl);
 //INPUT: jumpFlag_ALUctrl, beqctrl
 //OUTPUT: beqSatisfied
-//---------------------------------------------------------------------------
+//
 or or_1(jumpDecision, jctrl, beqSatisfied);
 //INPUT: jctrl, beqSatisfied
 //OUTPUT: jumpDecision
-//---------------------------------------------------------------------------
+
 mux2_1_ctrl1_in2 ctrljalMUX(jalAddr, pcAddrOutPlusOne, pcAddrOutPlusImm, jumpDecision);		//choose between pc+imm and pc+1
-//---------------------------------------------------------------------------
 //INPUT: pcAddrOutPlusOne, pcAddrOutPlusImm
 //OUTPUT: jalAddr
 //CONTROL: jumpDecision
+	
 mux2_1_ctrl1_in2 ctrljrMUX(pcFinalOut, jalAddr, rsData, jrctrl);			//choose between jr $ra and whatever comes from from ctrljalMUX
-//---------------------------------------------------------------------------
 //INPUT: jalAddr, rsData
 //OUTPUT: pcFinalOu
 //CONTROL: jrctrl
