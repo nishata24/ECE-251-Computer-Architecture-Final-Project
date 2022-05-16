@@ -2,16 +2,16 @@
 
 module pc(output1, clk, input1, reset, pc);
 
-//-------------Input Ports-----------------------------
+//Input Ports
 input wire clk;
 input wire [7:0] input1;
 input wire reset;
 input [7:0] pc;
 
-//-------------Output Ports----------------------------
+//Output Ports
 output reg [7:0] output1; 	//8 bits of output
 
-//------------------Instructions-----------------------
+//Instructions
 
 initial begin
 	output1 <= 8'b00000000;
