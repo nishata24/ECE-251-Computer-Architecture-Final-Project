@@ -2,17 +2,17 @@
 
 module mux3_1(output1, input0, input1, input2, ctrl);
 
-//-------------Input Ports-----------------------------
+//Input Ports
 input wire [1:0] ctrl;		
 input wire [7:0] input0;	//input at 0
 input wire [7:0] input1;	//input at 1
 input wire [7:0] input2;	//input at 2
 
-//-------------Output Ports----------------------------
+//Output Ports
 
 output reg [7:0] output1; 	//8 bits of output
 
-//------------------Instructions-----------------------
+//Instructions
 always @*
 	begin
 		case(ctrl)
