@@ -1,5 +1,10 @@
 # ECE-251-Computer-Architecture-Final-Project
 
+If Makefile does not work, compile manually and obtain waves using the following instructions. 
+1. iverilog main_tb.v
+2. vvp a.out
+3. gtkwave bag.vcd
+
 **ALU**
 
 The Arithmetic Logic Unit in this 8-bit computer functions like a digital circuit that performs logical operations based on instructions. Once the ALU is given information from the registers via the controller the ALU decoder recognizes the various operations from their designated opcodes. 
