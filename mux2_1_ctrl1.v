@@ -2,16 +2,16 @@
 
 module mux2_1_ctrl1(output1, input0, input1, ctrl);
 
-//-------------Input Ports-----------------------------
+//Input Ports
 input wire ctrl;		
 input wire input0;	//input at 0
 input wire input1;	//unput at 1
 
-//-------------Output Ports----------------------------
+//Output Ports
 
 output reg output1; 	//8 bits of output
 
-//------------------Instructions-----------------------
+//Instructions
 always @*
 	begin
 		if (ctrl == 0)
