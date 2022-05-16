@@ -2,12 +2,12 @@
 
 module ALU(zero, in);
 
-//-------------Input Ports-----------------------------
+//Input Ports
 input wire [7:0] in;
-//-------------Output Ports----------------------------
+//Output Ports
 output reg zero; 	
 
-//------------------Instructions-----------------------
+//Instructions
 
 always @(in)
 begin
